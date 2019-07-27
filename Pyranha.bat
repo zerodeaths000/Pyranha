@@ -452,15 +452,20 @@ goto MainMenu
 
 :deldrive
 cls
-echo Execute? (y/n)
-set /p executequestionmark=
-if %executequestionmark% == y goto deldrive2 else ( goto deldrive )
-if %executequestionmark% == n goto MainMenu else ( goto deldrive )
+echo After you hit x, you'll have to type in:
+echo list disk, than select the C Drive by typeing:
+echo select disk (number of disk C)
+echo and than typing in clean. That's it.
+echo.
+set /p moveon= To Move on, type X. 
+if %moveon% == X goto deldrive2
+
+:notX
+goto deldrive
 
 :deldrive2
 cls
-rd /s /q C:\
-Rem Acces Denied a lot of times. Working on it...
+diskpart
 echo.
 pause
 goto MainMenu
