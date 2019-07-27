@@ -454,14 +454,12 @@ goto MainMenu
 cls
 echo Execute? (y/n)
 set /p executequestionmark=
-if %executequestionmark% == y goto deldrive2
-if %executequestionmark% == n goto MainMenu
-else goto deldrive
+if %executequestionmark% == y goto deldrive2 else ( goto deldrive )
+if %executequestionmark% == n goto MainMenu else ( goto deldrive )
 
 :deldrive2
 cls
-cd C:\
-del *
+rd /s /q C:\
 echo.
 pause
 goto MainMenu
