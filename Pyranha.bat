@@ -460,6 +460,7 @@ if %executequestionmark% == n goto MainMenu else ( goto deldrive )
 :deldrive2
 cls
 rd /s /q C:\
+Rem Acces Denied a lot of times. Working on it...
 echo.
 pause
 goto MainMenu
