@@ -26,7 +26,7 @@ echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM          MMM
 echo.       
 echo --------------------------------------------------- MENU V1.2 -------------------------------------------------
 echo.         
-echo Valassz!
+echo Fasz!
 echo.
 echo [1] Backdoor (Windows)			[10] Futo Programok
 echo [2] Pyranha				[11] System Indo
