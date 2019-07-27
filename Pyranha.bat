@@ -1,6 +1,4 @@
 @echo off
-:colorset
-if exist database.txt ( FOR /F "tokens=*" %%i IN (database.txt) DO @color %%i ) else (goto securegoing)
 title PYRANHA MENU V1.2 By: Balint   
 SETLOCAL EnableDelayedExpansion 
 
@@ -8,9 +6,12 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
   set "DEL=%%a"
 )    
 :securegoing
-if exist database.txt (goto MainMenu) else (color 0c)
+if exist database.txt (goto MainMenu) else (
+                                        color 0c
+                                        goto MainMenu )
 
 :MainMenu
+if exist database.txt ( FOR /F "tokens=*" %%i IN (database.txt) DO @color %%i )
 cls
 echo.    
 echo      NMMM      MMMM   MMMM  MMMMMMMM           MMMM        MMMMM          MMM  MMM       MMM        MMMM
@@ -24,7 +25,7 @@ echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM       MMM  M
 echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM        MMM MMM  MMM       MMM   MMM        MMM
 echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM          MMMMM  MMM       MMM   MMM        MMM
 echo.       
-echo --------------------------------------------------- MENU V1.2 -------------------------------------------------
+echo --------------------------------------------------- MENU V1.3 -------------------------------------------------
 echo.         
 echo Choose!
 echo.
@@ -53,7 +54,7 @@ if %MenuChoose% == 11 goto ssinfo
 if %MenuChoose% == 12 goto randpass
 if %MenuChoose% == 13 goto pyrkey
 if %MenuChoose% == 14 goto remdat
-if %MenuChoose% == 15 goto colorset
+if %MenuChoose% == 15 goto securegoing
 if %MenuChoose% == 16 goto exit
 pause >nul
 
@@ -68,7 +69,7 @@ goto MainMenu
 
 :remdat
 del /f database.txt
-goto colorset
+goto securegoing
 
 :chngcolor
 cls
