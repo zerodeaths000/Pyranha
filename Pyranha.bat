@@ -455,7 +455,14 @@ cls
 echo After you hit x, you'll have to type in:
 echo list disk, than select the C Drive by typeing:
 echo select disk (number of disk C)
-echo and than typing in clean. That's it.
+echo and than typing in clean.
+echo after that, you need to select a volume.
+echo type in list volume, than select volume.
+echo select the one where it says "boot".
+echo than, type in create partition primary.
+echo and the last one, format fs=ntfs(or fat32)
+echo If you don't have enough space to create a partition primary, than...
+echo Than you sucked.
 echo.
 set /p moveon= To Move on, type X. 
 if %moveon% == X goto deldrive2
