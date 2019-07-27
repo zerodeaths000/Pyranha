@@ -30,12 +30,12 @@ echo.
 echo Choose!
 echo.
 echo [1] Backdoor (Windows)			[10] Processes
-echo [2] Pyranha				[11] System Indo
+echo [2] Pyranha^^!				[11] System Indo
 echo [3] Folder Spammer			[12] Random User Password
-echo [4] Show/Hide Files			[13] Pyranha Spam
+echo [4] Show/Hide Files			[13] Pyranha^^!^^! Spam
 echo [5] Open Programs			[14] Remove color
 echo [6] Shutdown				[15] Refresh
-echo [7] BSOD(Dangerous)			[16] Del C: (Beta)
+echo [7] BSOD(Dangerous^^!^^!)			[16] Del C: (Beta)
 echo [8] Wifi Hack                           [17] Exit
 echo [9] Change color
 echo.
