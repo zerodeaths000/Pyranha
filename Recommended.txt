@@ -1,28 +1,24 @@
-    (Segítség a lap alján)
+    (Help at the bottom)
 -------------------------------
 
 --------- Windows 7 -----------
-Ahánlott Betûméret: 7x12
-Ajánlott Hosszúság: 112
-Ajánlott Magasság: 42
+Recommened Font Size: 7x12
+Recommened Width: 112
+Recommened Height: 42
 
 --------- Windows 8 -----------
-Ahánlott Betûméret: 7x12
-Ajánlott Hosszúság: 112
-Ajánlott Magasság: 42
+Recommened Font Size: 7x12
+Recommened Width: 112
+Recommened Height: 42
 
 --------- Windows 10 ----------
-Ajánlott Betûméret: 16
-Ajánlott Hosszúság: 120
-Ajánlott Magasság: 30
+Recommened Font Size: 16
+Recommened Width: 120
+Recommened Height: 30
 
-Beállítás segítség (szövegben elmagyarázva)
+Setting Help:
 -------------------------------------------
-Szimplán beindítod a pyranhát, a ikonra jobbkattolsz, a bal felsõ sarokban,
-és rányomsz a tulajdonságok gombra.
-A Betítûpus, avagy Font fül alatt változtatható meg a betûméret.
-Az Ajánlott méretre változtasd meg. Az Elrendezés, avagy Layout(asszem)
-fül alatt, és azon belül az ablakméret szöveg alatt az ajánlott
-méretekre változtasd meg.
-
-
+You simply start Pyranha, Right Click on the top right, and than click on properties.
+You can set the Font Size under Font.
+Set it to the Recommened size. Under Layout,
+Set the window width and window height to the recommended values, and you are done.
