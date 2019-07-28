@@ -46,7 +46,7 @@ echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM       MMM  M
 echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM        MMM MMM  MMM       MMM   MMM        MMM
 echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM          MMMMM  MMM       MMM   MMM        MMM
 echo.       
-echo --------------------------------------------------- MENU V1.3 -------------------------------------------------
+echo --------------------------------------------------- MENU V1.3.5 -------------------------------------------------
 echo.         
 echo Choose^^!
 echo.
@@ -511,7 +511,7 @@ set /p dname= Diary Name:
 echo.
 if exist %dname%.txt (type %dname%.txt
                        echo.                                 
-                       goto nexttype) else ( echo.
+                       goto nexttype ) else ( echo.
                                           echo The Diary Doesn't Exist. 
                                           pause
                                           echo.
@@ -568,3 +568,4 @@ dir *.txt
 echo.
 pause
 goto diary
+rem acually, I'm 12 yrs old xD
