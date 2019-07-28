@@ -6,11 +6,26 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
   set "DEL=%%a"
 )    
 :securegoing
-if exist database.txt (goto MainMenu) else (
+if exist database.txt ( goto MainMenu ) else (
                                         color 0c
                                         goto MainMenu )
 
+:user
+echo.
+set /p username= Your User Name: 
+echo %username% >> user.txt
+if exist C:\Users\%username%\ ( goto MainMenu ) else ( goto wrongusername )
+
+:wrongusername
+echo.
+del /f user.txt
+echo The Username is wrong. Please Type it again.
+echo.
+pause
+goto user
+
 :MainMenu
+if exist user.txt ( FOR /F "tokens=*" %%a IN (user.txt) DO @cd C:\Users\%%a\Desktop\Pyranha ) else ( goto user )
 if exist database.txt ( FOR /F "tokens=*" %%i IN (database.txt) DO @color %%i )
 cls
 echo.    
@@ -37,7 +52,9 @@ echo [5] Open Programs			[14] Reset color
 echo [6] Shutdown				[15] Refresh
 echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
 echo [8] Wifi Hack                           [17] Diary (Beta)
-echo [9] Change color                        [18] Exit
+echo [9] Change color                        [18] Reset Username
+echo.
+echo [19] Exit 
 echo.
 set /p MenuChoose=       
 if %MenuChoose% == 1 goto Choose(BD)
@@ -57,7 +74,8 @@ if %MenuChoose% == 14 goto remdat
 if %MenuChoose% == 15 goto securegoing
 if %MenuChoose% == 16 goto deldrive
 if %MenuChoose% == 17 goto diary
-if %MenuChoose% == 18 goto exit
+if %MenuChoose% == 18 goto resetusn
+if %MenuChoose% == 19 goto exit
 pause >nul
 
 :sd
@@ -516,3 +534,10 @@ echo %cdtext% >> %cdname%.txt
 echo.
 pause
 goto diary
+
+:resetusn
+cls
+del /f user.txt
+echo.
+pause
+goto user
