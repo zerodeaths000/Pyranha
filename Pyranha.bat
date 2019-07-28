@@ -485,7 +485,8 @@ pause
 goto MainMenu
 
 :diary
-cd Diaries
+if exist C:\Users\%username%\Desktop\Pyranha\Diaries (cd Diaries) else ( mkdir Diaries
+                                                                         goto diary )
 cls
 echo [1] Reset A Diary
 echo [2] Read Diary
