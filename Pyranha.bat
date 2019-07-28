@@ -8,10 +8,15 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 :securegoing
 if exist database.txt ( goto MainMenu ) else (
                                         color 0c
-                                        goto MainMenu )
+                                        goto othercheck )
+
+:othercheck
+if exist user.txt ( goto MainMenu ) else ( goto user )
 
 :user
+cls
 echo.
+echo Your user.txt file got deleted or you didn't create a user name.
 set /p username= Your User Name: 
 echo %username% >> user.txt
 if exist C:\Users\%username%\ ( goto MainMenu ) else ( goto wrongusername )
@@ -25,6 +30,7 @@ pause
 goto user
 
 :MainMenu
+cd C:\Users\%username%\Desktop\Pyranha
 if exist user.txt ( FOR /F "tokens=*" %%a IN (user.txt) DO @cd C:\Users\%%a\Desktop\Pyranha ) else ( goto user )
 if exist database.txt ( FOR /F "tokens=*" %%i IN (database.txt) DO @color %%i )
 cls
@@ -492,6 +498,7 @@ echo [1] Reset A Diary
 echo [2] Read Diary
 echo [3] Create New Diary
 echo [4] Back
+echo.
 set /p diaryc= 
 if %diaryc% == 1 goto rdiary
 if %diaryc% == 2 goto readdiary
@@ -519,6 +526,7 @@ cls
 set /p dname= Diary Name: 
 echo.
 if exist %dname%.txt ( type %dname%.txt
+                       echo.
                        pause         
                        echo.  
                        goto diary )           else ( 
