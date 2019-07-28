@@ -525,24 +525,32 @@ goto diary
 cls
 set /p dname= Diary Name: 
 echo.
-if exist %dname%.txt ( type %dname%.txt
-                       echo.
-                       pause         
-                       echo.  
-                       goto diary )           else ( 
-                                              echo.
-                                              echo The Diary Does Not Exist.
-                                              pause
-                                              goto readdiary )
+if exist %dname%.txt (type %dname%.txt
+                       echo.                 
+                       pause                
+                       goto nexttype) else ( echo.
+                                          echo The Diary Doesn't Exist. 
+                                          pause
+                                          echo.
+                                          goto diary )      
+
+:nexttype
+echo.
+set /p next= Type "Next": 
+if %next% == Next ( goto diary ) else ( goto nexttype ) 
 
 :creatediary
 cls
+echo.
+echo Type "stop" when you are done.
+echo.
 set /p cdname= The New Diary's Name: 
+
+:diarytext
 set /p cdtext= Text: 
 echo %cdtext% >> %cdname%.txt
-echo.
-pause
-goto diary
+if "%cdtext%" == "stop" goto diary
+goto diarytext
 
 :resetusn
 cls
