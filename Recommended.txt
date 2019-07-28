@@ -1,3 +1,6 @@
+MAKE SURE THAT YOU PUT PYRANHA ON DESKTOP! ( C:\Users\(youruser)\Desktop\Pyranha ) 
+ 
+ 
     (Help at the bottom)
 -------------------------------
 

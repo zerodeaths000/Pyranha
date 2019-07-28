@@ -37,7 +37,7 @@ echo [5] Open Programs			[14] Reset color
 echo [6] Shutdown				[15] Refresh
 echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
 echo [8] Wifi Hack                           [17] Diary (Beta)
-echo [9] Change color               [18] Exit
+echo [9] Change color                        [18] Exit
 echo.
 set /p MenuChoose=       
 if %MenuChoose% == 1 goto Choose(BD)
@@ -467,6 +467,7 @@ pause
 goto MainMenu
 
 :diary
+cd Diaries
 cls
 echo [1] Reset A Diary
 echo [2] Read Diary
@@ -483,20 +484,19 @@ goto diary
 
 :rdiary
 echo.
-cd Diaries
 set /p diaryname= Diary Name: 
-if exist %diaryname%.txt ( del /f %diaryname%.txt ) else ( goto wrongdiaryresn )
+if exist %diaryname%.txt ( del /f %diaryname%.txt
+                           goto diary ) else ( goto wrongdiaryresn )
 
 :wrongdiaryresn
 echo.
 echo The Diary Does Not Exist.
 echo.
 pause
-goto rdiary
+goto diary
 
 :readdiary
 cls
-cd Diaries
 set /p dname= Diary Name: 
 echo.
 if exist %dname%.txt ( type %dname%.txt
@@ -510,7 +510,6 @@ if exist %dname%.txt ( type %dname%.txt
 
 :creatediary
 cls
-cd Diaries
 set /p cdname= The New Diary's Name: 
 set /p cdtext= Text: 
 echo %cdtext% >> %cdname%.txt
