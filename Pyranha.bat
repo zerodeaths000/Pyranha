@@ -476,16 +476,18 @@ if exist C:\Users\%username%\Desktop\Pyranha\Diaries (cd Diaries) else ( mkdir D
 cls
 echo [1] Reset A Diary
 echo [2] Read Diary
-echo [3] Create New Diary
-echo [4] Create Diary (GUI)
-echo [5] Back
+echo [3] List Diaries
+echo [4] Create/Edit Diary
+echo [5] Create/Edit Diary (GUI)
+echo [6] Back
 echo.
 set /p diaryc= 
 if %diaryc% == 1 goto rdiary
 if %diaryc% == 2 goto readdiary
-if %diaryc% == 3 goto creatediary
-if %diaryc% == 4 goto creategui
-if %diaryc% == 5 goto MainMenu
+if %diaryc% == 3 goto lsdiar
+if %diaryc% == 4 goto creatediary
+if %diaryc% == 5 goto creategui
+if %diaryc% == 6 goto MainMenu
 
 :elsediary
 goto diary
@@ -508,8 +510,7 @@ cls
 set /p dname= Diary Name: 
 echo.
 if exist %dname%.txt (type %dname%.txt
-                       echo.                 
-                       pause                
+                       echo.                                 
                        goto nexttype) else ( echo.
                                           echo The Diary Doesn't Exist. 
                                           pause
@@ -558,5 +559,12 @@ goto MainMenu
 :creategui
 echo.
 start test.exe
+pause
+goto diary
+
+:lsdiar
+echo.
+dir *.txt
+echo.
 pause
 goto diary
