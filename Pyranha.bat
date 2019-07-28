@@ -477,13 +477,15 @@ cls
 echo [1] Reset A Diary
 echo [2] Read Diary
 echo [3] Create New Diary
-echo [4] Back
+echo [4] Create Diary (GUI)
+echo [5] Back
 echo.
 set /p diaryc= 
 if %diaryc% == 1 goto rdiary
 if %diaryc% == 2 goto readdiary
 if %diaryc% == 3 goto creatediary
-if %diaryc% == 4 goto MainMenu
+if %diaryc% == 4 goto creategui
+if %diaryc% == 5 goto MainMenu
 
 :elsediary
 goto diary
@@ -552,3 +554,9 @@ ipconfig /flushdns
 echo.
 pause
 goto MainMenu
+
+:creategui
+echo.
+start test.exe
+pause
+goto diary
