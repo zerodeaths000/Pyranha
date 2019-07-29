@@ -54,7 +54,7 @@ echo Choose^^!
 echo.
 echo [1] Backdoor (Windows)			[10] Processes              [19] Devices On Network
 echo [2] Pyranha^^!				[11] System Info            [20] Flush DNS Cache
-echo [3] Folder Spammer			[12] Random User Password
+echo [3] Folder Spammer			[12] Random User Password   [21] I Have no idea, so this:
 echo [4] Show/Hide Files			[13] Pyranha^^!^^! Spam
 echo [5] Open Programs			[14] Reset color
 echo [6] Shutdown				[15] Refresh
@@ -62,7 +62,7 @@ echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
 echo [8] Wifi Hack                           [17] Diary 
 echo [9] Change color                        [18] Reset Username
 echo.
-echo [21] Exit 
+echo [22] Exit 
 echo.
 set /p MenuChoose= Option: 
 if %MenuChoose% == 1 goto Choose(BD)
@@ -85,7 +85,8 @@ if %MenuChoose% == 17 goto diary
 if %MenuChoose% == 18 goto resetusn
 if %MenuChoose% == 19 goto netv
 if %MenuChoose% == 20 goto flushcache
-if %MenuChoose% == 21 goto exit
+if %MenuChoose% == 21 goto noI
+if %MenuChoose% == 22 goto exit
 pause >nul
 
 :sd
@@ -571,3 +572,78 @@ echo.
 pause
 goto diary
 rem acually, I'm 12 yrs old xD
+
+:noI
+echo.
+SET /A n1=%random% %%8
+SET /A n2=%random% %%8
+echo Guess The Color Combination!
+echo.
+echo Example: ( 00: black, black )
+echo %n1%%n2%
+set /p guesspls= Guess: 
+if %n1% == 0 if %n2% == 0 if "%guesspls%" == "black, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 0 if "%guesspls%" == "blue, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 0 if "%guesspls%" == "green, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 0 if "%guesspls%" == "aqua, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 0 if "%guesspls%" == "red, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 0 if "%guesspls%" == "purple, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 0 if "%guesspls%" == "yellow, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 0 if "%guesspls%" == "white, black" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 1 if "%guesspls%" == "black, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 2 if "%guesspls%" == "black, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 3 if "%guesspls%" == "black, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 4 if "%guesspls%" == "black, red" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 5 if "%guesspls%" == "black, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 6 if "%guesspls%" == "black, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 0 if %n2% == 7 if "%guesspls%" == "black, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 1 if "%guesspls%" == "blue, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 2 if "%guesspls%" == "blue, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 3 if "%guesspls%" == "blue, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 4 if "%guesspls%" == "blue, red" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 5 if "%guesspls%" == "blue, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 6 if "%guesspls%" == "blue, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 1 if %n2% == 7 if "%guesspls%" == "blue, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 1 if "%guesspls%" == "green, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 2 if "%guesspls%" == "green, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 3 if "%guesspls%" == "green, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 4 if "%guesspls%" == "green, red" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 5 if "%guesspls%" == "green, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 6 if "%guesspls%" == "green, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 2 if %n2% == 7 if "%guesspls%" == "green, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 1 if "%guesspls%" == "aqua, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 2 if "%guesspls%" == "aqua, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 3 if "%guesspls%" == "aqua, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 4 if "%guesspls%" == "aqua, red" ( echo right^^! )  else ( echo wrong. )
+if %n1% == 3 if %n2% == 5 if "%guesspls%" == "aqua, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 6 if "%guesspls%" == "aqua, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 3 if %n2% == 7 if "%guesspls%" == "aqua, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 1 if "%guesspls%" == "red, blue" ( echo right^^! )  else ( echo wrong. )
+if %n1% == 4 if %n2% == 2 if "%guesspls%" == "red, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 3 if "%guesspls%" == "red, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 4 if "%guesspls%" == "red, red" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 5 if "%guesspls%" == "red, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 6 if "%guesspls%" == "red, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 4 if %n2% == 7 if "%guesspls%" == "red, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 1 if "%guesspls%" == "purple, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 2 if "%guesspls%" == "purple, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 3 if "%guesspls%" == "purple, aqua" ( echo right^^! ) else ( ecif %n1% == 5 if %n2% == 4 if "%guesspls%" == "purple, red" ( goto diary ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 5 if "%guesspls%" == "purple, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 6 if "%guesspls%" == "purple, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 7 if "%guesspls%" == "purple, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 1 if "%guesspls%" == "yellow, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 2 if "%guesspls%" == "yellow, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 3 if "%guesspls%" == "yellow, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 4 if "%guesspls%" == "yellow, red" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 5 if "%guesspls%" == "yellow, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 6 if "%guesspls%" == "yellow, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 6 if %n2% == 7 if "%guesspls%" == "yellow, white" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 1 if "%guesspls%" == "white, blue" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 2 if "%guesspls%" == "white, green" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 3 if "%guesspls%" == "white, aqua" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 4 if "%guesspls%" == "white, red" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 5 if "%guesspls%" == "white, purple" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 6 if "%guesspls%" == "white, yellow" ( echo right^^! ) else ( echo wrong. )
+if %n1% == 7 if %n2% == 7 if "%guesspls%" == "white, white" ( echo right^^! ) else ( echo wrong. )
+pause
+goto MainMenu
