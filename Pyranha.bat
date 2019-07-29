@@ -10,14 +10,16 @@ if exist database.txt ( goto MainMenu ) else (
                                         color 0c
                                         goto othercheck )
 
-:othercheck
+:othercheck 
 if exist user.txt ( goto MainMenu ) else ( goto user )
 
 :user
 cls
 echo.
+echo Type "stop" to exit
 echo Your user.txt file got deleted or you didn't create a user name.
 set /p username= Your User Name: 
+if %username% == stop exit
 echo %username% >> user.txt
 if exist C:\Users\%username%\ ( goto MainMenu ) else ( goto wrongusername )
 
