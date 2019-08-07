@@ -135,11 +135,34 @@ if exist database.txt (del /f database.txt)
 
 :chngcolor2
 cls
+echo Type "stop" to exit
+echo.
 set /p colorcustomization= The color combination: 
 echo %colorcustomization% >> database.txt
-echo.
-pause
-goto MainMenu
+if %colorcustomization% == stop ( del /f database.txt
+                                        goto MainMenu)
+goto colorcheck
+
+:colorcheck
+echo %colorcustomization%|findstr /r "[^0-9]" > nul
+if errorlevel 1 goto MainMenu
+echo %colorcustomization%|findstr /r "[^A-F]" > nul
+if errorlevel 1 goto MainMenu
+echo %colorcustomization%|findstr /r "[^A-F0-9]" > nul
+if errorlevel 1 goto MainMenu
+echo %colorcustomization%|findstr /r "[^g-z]" > nul
+if errorlevel 1 goto lettersincolorcust
+echo %colorcustomization%|findstr /r "[^G-Z]" > nul
+if errorlevel 1 goto lettersincolorcust
+echo %colorcustomization%|findstr /r "[^g-zG-Z]" > nul
+if errorlevel 1 goto lettersincolorcust
+echo %colorcustomization%|findstr /r "[^g-z0-9]" > nul
+if errorlevel 1 goto lettersincolorcust
+echo %colorcustomization%|findstr /r "[^G-Z0-9]" > nul
+if errorlevel 1 goto lettersincolorcust
+echo %colorcustomization%|findstr /r "[^g-zG-Z0-9]" > nul
+if errorlevel 1 goto lettersincolorcust
+
 
 :Choose(BD)
 cls
@@ -998,3 +1021,11 @@ if %n1% == 7 if %n2% == 4 if "%guesspls%" == "white, red" ( echo right^^! ) else
 if %n1% == 7 if %n2% == 5 if "%guesspls%" == "white, purple" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 7 if %n2% == 6 if "%guesspls%" == "white, yellow" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 7 if %n2% == 7 if "%guesspls%" == "white, white" ( echo right^^! ) else ( echo wrong. )
+
+:lettersincolorcust
+echo.
+echo Your color had invalid letters.
+echo Try Again.
+del /f database.txt
+pause
+goto chngcolor2
