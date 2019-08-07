@@ -1,5 +1,5 @@
 @echo off
-title PYRANHA MENU V1.2 By: Balint   
+title Pyranha Menu V1.3.5s   
 SETLOCAL EnableDelayedExpansion 
 
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
@@ -206,8 +206,8 @@ goto Choose(BD)
 
 :choosetoappearordisappear
 cls
-echo [1] Show
-echo [2] Hide
+echo [1] Hide
+echo [2] Show
 echo.
 set /p choosetoappodisapp=
 if %choosetoappodisapp% == 1 goto disappear
@@ -260,6 +260,7 @@ pause
 goto appear
 
 :appear2
+cd "%appearpath%"
 cls
 set /p appearname= The name of the file, and its extension(if you want to make a folder disappear, you don't need one): 
 if exist "%appearname%" goto appear3
@@ -293,7 +294,7 @@ if %ownprogram% == 1 goto stnpad
 if %ownprogram% == 2 goto stcmd
 if %ownprogram% == 3 goto sttaskmgr
 if %ownprogram% == 4 goto stfk
-if %ownprogram% == 5 goto MainMenu
+if %ownprogram% == 5 goto securegoing
 pause >nul
 
 :stnpad
@@ -477,7 +478,7 @@ goto MainMenu
 if exist C:\Users\%username%\Desktop\Pyranha\Diaries (cd Diaries) else ( mkdir Diaries
                                                                          goto diary )
 cls
-echo [1] Reset A Diary
+echo [1] Delete A Diary
 echo [2] Read Diary
 echo [3] List Diaries
 echo [4] Create/Edit Diary
@@ -582,6 +583,359 @@ echo.
 echo Example: ( 00: black, black )
 echo %n1%%n2%
 set /p guesspls= Guess: 
+call ::color_change
+pause
+goto MainMenu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:color_change
 if %n1% == 0 if %n2% == 0 if "%guesspls%" == "black, black" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 1 if %n2% == 0 if "%guesspls%" == "blue, black" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 2 if %n2% == 0 if "%guesspls%" == "green, black" ( echo right^^! ) else ( echo wrong. )
@@ -627,7 +981,7 @@ if %n1% == 4 if %n2% == 6 if "%guesspls%" == "red, yellow" ( echo right^^! ) els
 if %n1% == 4 if %n2% == 7 if "%guesspls%" == "red, white" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 5 if %n2% == 1 if "%guesspls%" == "purple, blue" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 5 if %n2% == 2 if "%guesspls%" == "purple, green" ( echo right^^! ) else ( echo wrong. )
-if %n1% == 5 if %n2% == 3 if "%guesspls%" == "purple, aqua" ( echo right^^! ) else ( ecif %n1% == 5 if %n2% == 4 if "%guesspls%" == "purple, red" ( goto diary ) else ( echo wrong. )
+if %n1% == 5 if %n2% == 3 if "%guesspls%" == "purple, aqua" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 5 if %n2% == 5 if "%guesspls%" == "purple, purple" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 5 if %n2% == 6 if "%guesspls%" == "purple, yellow" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 5 if %n2% == 7 if "%guesspls%" == "purple, white" ( echo right^^! ) else ( echo wrong. )
@@ -645,5 +999,3 @@ if %n1% == 7 if %n2% == 4 if "%guesspls%" == "white, red" ( echo right^^! ) else
 if %n1% == 7 if %n2% == 5 if "%guesspls%" == "white, purple" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 7 if %n2% == 6 if "%guesspls%" == "white, yellow" ( echo right^^! ) else ( echo wrong. )
 if %n1% == 7 if %n2% == 7 if "%guesspls%" == "white, white" ( echo right^^! ) else ( echo wrong. )
-pause
-goto MainMenu
