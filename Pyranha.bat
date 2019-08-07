@@ -1,5 +1,5 @@
 @echo off
-title Pyranha Menu V1.3.5s   
+title Pyranha Menu V1.3.5 
 SETLOCAL EnableDelayedExpansion 
 
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
@@ -52,15 +52,15 @@ echo --------------------------------------------------- MENU V1.3.5 -----------
 echo.         
 echo Choose^^!
 echo.
-echo [1] Backdoor (Windows)			[10] Processes              [19] Devices On Network
-echo [2] Pyranha^^!				[11] System Info            [20] Flush DNS Cache
-echo [3] Folder Spammer			[12] Random User Password   [21] I Have no idea, so this:
-echo [4] Show/Hide Files			[13] Pyranha^^!^^! Spam
-echo [5] Open Programs			[14] Reset color
-echo [6] Shutdown				[15] Refresh
-echo [7] BSOD(Dangerous^^!^^!)			[16] BSOD2(Dangerous^^!^^!)
-echo [8] Wifi Hack                           [17] Diary 
-echo [9] Change color                        [18] Reset Username
+echo [1] Backdoor (Windows)	[10] Processes              [19] Devices On Network
+echo [2] Pyranha^^!		[11] System Info            [20] Flush DNS Cache
+echo [3] Folder Spammer	[12] Random User Password   [21] I Have no idea, so this:
+echo [4] Show/Hide Files	[13] Pyranha^^!^^! Spam
+echo [5] Open Programs	[14] Reset color
+echo [6] Shutdown		[15] Refresh
+echo [7] BSOD(Dangerous^^!^^!)   [16] BSOD2(Dangerous^^!^^!)
+echo [8] Wifi Hack           [17] Diary 
+echo [9] Change color        [18] Reset Username
 echo.
 echo [22] Exit 
 echo.
@@ -586,7 +586,6 @@ set /p guesspls= Guess:
 call ::color_change
 pause
 goto MainMenu
-
 
 
 
